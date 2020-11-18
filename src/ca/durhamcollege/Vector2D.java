@@ -149,6 +149,19 @@ public class Vector2D
         return new Vector2D(a.getX() + (b.getX() - a.getX()) * t, a.getY() + (b.getY() - a.getY()) * t);
     }
 
+    public static float dot(final Vector2D lhs, final Vector2D rhs)
+    {
+        return (float)((double)(lhs.getX() * (double)(rhs.getX())) + ((double)(lhs.getY() * (double)(rhs.getY()))));
+    }
+
+    public static float distance(final Vector2D a, final Vector2D b)
+    {
+        final var deltaX = (double)(b.getX()) - (double)(a.getX());
+        final var deltaY = (double)(b.getY()) - (double)(a.getY());
+
+        return (float)Math.sqrt((float)(deltaX * deltaX) + (float)(deltaY * deltaY));
+    }
+
     //UTILITY METHODS
     public float getMagnitude()
     {
